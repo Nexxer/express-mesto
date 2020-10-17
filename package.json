@@ -1,0 +1,31 @@
+{
+  "homepage": "https://nexxer.github.io/express-mesto/",
+  "name": "express-mesto",
+  "version": "0.12.0",
+  "private": true,
+  "dependencies": {
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "express": "^4.17.1"
+  },
+  "author": "I.M.Yakunin",
+  "license": "ISC",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "eslint-plugin-react": "^7.21.4",
+    "nodemon": "^2.0.4"
+  },
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nexxer/express-mesto.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nexxer/express-mesto/issues"
+  },
+  "description": ""
+}
