@@ -1,17 +1,12 @@
 const cardsRouter = require('express').Router();
-const path = require('path');
-const readFile = require('../utils/read_file');
+const {
+  getCards,
+  createCard,
+  deleteCard,
+} = require('../controllers/cards');
 
-const cardsDirectory = path.join(__dirname, '../data/users.json');
-
-cardsRouter.get('/', (req, res) => {
-  readFile(cardsDirectory)
-    .then((data) => {
-      res.send(data);
-    })
-    .catch(() => {
-      res.status(500).send({ message: 'Внутренняя ошибка сервера' });
-    });
-});
+cardsRouter.get('/', getCards);
+cardsRouter.post('/', createCard);
+cardsRouter.delete('/:cardId', deleteCard);
 
 module.exports = cardsRouter;
