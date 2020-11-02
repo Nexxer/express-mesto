@@ -5,10 +5,10 @@ const {
   createUser,
 } = require('../controllers/users');
 
-usersRouter.get('/', getUsers);
+usersRouter.get('/users', getUsers);
 
-usersRouter.get('/:id', getUserId);
+usersRouter.get('/users/:id', getUserId);
 
-usersRouter.post('/', createUser);
+usersRouter.post('/users', createUser);
 
 module.exports = usersRouter;

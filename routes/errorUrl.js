@@ -1,6 +1,6 @@
 const errorUrl = require('express').Router();
 
-errorUrl.get('/', (req, res) => {
+errorUrl.get('*', (req, res) => {
   res.status(404).send({ message: 'Запрашиваемый ресурс не найден' });
 });
 

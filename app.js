@@ -1,10 +1,7 @@
-const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const users = require('./routes/users');
-const cards = require('./routes/cards');
-const errorUrl = require('./routes/errorUrl');
+const routes = require('./routes/index');
 
 const { PORT = 3000 } = process.env;
 const app = express();
@@ -19,18 +16,14 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
   useUnifiedTopology: true,
 });
 
-app.use(express.static(path.join(__dirname, 'public')));
-
 app.use((req, res, next) => {
   req.user = {
-    _id: '5f9e6e6792f7e229c056ccdd',
+    _id: '5f9a50e852e0855c14e06a75',
   };
 
   next();
 });
 
-app.use('/users', users);
-app.use('/cards', cards);
-app.use('*', errorUrl);
+app.use('/', routes);
 
 app.listen(PORT);
